@@ -18,14 +18,13 @@
 <style>
 
 #headlineStyle{
-font-size:45px;
 color:gray;
 text-align:center;
 text-shadow:2px 2px white;
 }
 
 .resultStyle{
-height:50px;
+height:100px;
 width:320px;
 border-width:5px;
 border-style:solid;
@@ -33,7 +32,7 @@ color:black;
 border-radius:5px;
 background-color:#556B2F;
 font-weight:bold;
-font-size:25px;
+font-size:30px;
 }
 
 
@@ -42,7 +41,7 @@ border-width:5px;
 border-radius:10px;
 color:black;
 width:350px;
-height:375px;
+height:475px;
 border-style:solid;
 padding:10px;
 margin-top:30px;
@@ -66,13 +65,17 @@ postion:absolute;
 font-size:20px;
 font-weight:bold;
 }
+
+.shareButton{
+border-color:transparent;background-color:transparent;font-size:25px;color:black;
+} 
 </style>
 
 <div class="container-fluid">
 
 <div class="row text-center">
  <div class="col-xs-12">
- <h1 id="headlineStyle">Scientific Calculator</h1>
+ <h1 id="headlineStyle">eCalculator</h1>
  </div>
 
 </div>
@@ -124,6 +127,28 @@ font-weight:bold;
 <button class="buttonsStd" id="x^y" onClick='POW()'>x^y</button>
 
 </div>
+
+<div style="margin: 20px 0;">
+					<a id="fb" class="btn btn-default shareButton" href="https://www.facebook.com/sharer/sharer.php?u=https://KaushikDev.github.io/electronicCalculator" target="_blank" onClick="soundHitSocialIcon.play()">
+				<i class="fa fa-facebook"></i>
+			</a>
+			<a id="wa" class="btn btn-default shareButton" href="whatsapp://send?text=https://KaushikDev.github.io/electronicCalculator" onClick="soundHitSocialIcon.play()">
+				<i class="fa fa-whatsapp"></i>
+			</a>
+			<a id="tw" class="btn btn-default shareButton" href="https://twitter.com/home?status=https://KaushikDev.github.io/electronicCalculator" target="_blank" onClick="soundHitSocialIcon.play()">
+				<i class="fa fa-twitter" ></i>
+			</a>
+			<a id="li" class="btn btn-default shareButton" href="
+https://www.linkedin.com/shareArticle?url=https://KaushikDev.github.io/electronicCalculator&title=electronicCalculator" target="_blank" onClick="soundHitSocialIcon.play()">
+				<i class="fa fa-linkedin" ></i>
+			</a>
+			<a id="ma" class="btn btn-default shareButton" href="mailto:?subject=electronicCalculator.&amp;body=https://KaushikDev.github.io/electronicCalculator" target="_blank" onClick="soundHitSocialIcon.play()">
+				<i class="fa fa-envelope-o" ></i>
+			</a>
+			<p><i class="fa fa-copyright"></i>KaushikCodeArts 2019</p>
+			</div>
+			 
+
 </div>
 	
 
@@ -138,27 +163,9 @@ font-weight:bold;
 
 
   
-  <div class="row text-center">
-        <div class="col-xs-12">
-	<a id="fb" class="btn btn-default text-center" style="background-color:transparent;border-color:transparent;" href="https://www.facebook.com/sharer/sharer.php?u=https://KaushikDev.github.io/electronicCalculator" target="_blank"><i class="fa fa-facebook" aria-hidden="true" style="color:white;font-size:30px;font-weight:bold;"></i></a>
-        <a id="whatsapp" class="btn btn-default text-center" style="background-color:transparent;border-color:transparent;" href="whatsapp://send?text=https://KaushikDev.github.io/electronicCalculator"><i class="fa fa-whatsapp" aria-hidden="true" style="color:white;font-size:30px;font-weight:bold;"></i></a>
-        <a id="tweet" class="btn btn-default text-center" style="background-color:transparent;border-color:transparent;" href="https://twitter.com/home?status=https://KaushikDev.github.io/electronicCalculator" target="_blank"><i class="fa fa-twitter" aria-hidden="true" style="color:white;font-size:30px;font-weight:bold;"></i></a>
-                </div>
-        </div>
-	
-	<div class="row text-center" style="margin-top:10px;">
-<div class="col-xs-12">
-<a href="https://kaushikdev.github.io/portfolio/" target="_blank" style="color:white;"><i class="fa fa-copyright" aria-hidden="true" style="color:white;font-size:15px;"></i>KaushikCodeArts 2018</a>
-</div>
-</div>
-	
-</div>
 
-<script  type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
-<script  type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/js/bootstrap.js">
-  </script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+	
+</div>
 
 <!--THIS IS ACTUAL JAVASCRIPT CODE TO RUN THE CALCULATOR -->
 
