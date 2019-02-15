@@ -18,9 +18,8 @@
 <style>
 
 #headlineStyle{
-color:gray;
-text-align:center;
-text-shadow:2px 2px white;
+background-color:black;
+margin-bottom:10px;
 }
 
 .resultStyle{
@@ -67,92 +66,92 @@ font-weight:bold;
 }
 
 .shareButton{
-border-color:transparent;background-color:transparent;font-size:25px;color:black;
+border-color:transparent;background-color:transparent;font-size:25px;color:white;
 } 
 </style>
 
 <div class="container-fluid">
 
-<div class="row text-center">
- <div style="margin: 20px 0;">
-					<a id="fb" class="btn btn-default shareButton" href="https://www.facebook.com/sharer/sharer.php?u=https://KaushikDev.github.io/electronicCalculator" target="_blank" onClick="soundHitSocialIcon.play()">
-				<i class="fa fa-facebook"></i>
-			</a>
-			<a id="wa" class="btn btn-default shareButton" href="whatsapp://send?text=https://KaushikDev.github.io/electronicCalculator" onClick="soundHitSocialIcon.play()">
-				<i class="fa fa-whatsapp"></i>
-			</a>
-			<a id="tw" class="btn btn-default shareButton" href="https://twitter.com/home?status=https://KaushikDev.github.io/electronicCalculator" target="_blank" onClick="soundHitSocialIcon.play()">
-				<i class="fa fa-twitter" ></i>
-			</a>
-			<a id="li" class="btn btn-default shareButton" href="
-https://www.linkedin.com/shareArticle?url=https://KaushikDev.github.io/electronicCalculator&title=electronicCalculator" target="_blank" onClick="soundHitSocialIcon.play()">
-				<i class="fa fa-linkedin" ></i>
-			</a>
-			<a id="ma" class="btn btn-default shareButton" href="mailto:?subject=electronicCalculator.&amp;body=https://KaushikDev.github.io/electronicCalculator" target="_blank" onClick="soundHitSocialIcon.play()">
-				<i class="fa fa-envelope-o" ></i>
-			</a>
+	<div id="headlineStyle" class="row text-center">
+		<div style="margin: 20px 0;">
+							<a id="fb" class="btn btn-default shareButton" href="https://www.facebook.com/sharer/sharer.php?u=https://KaushikDev.github.io/electronicCalculator" target="_blank" onClick="soundHitSocialIcon.play()">
+						<i class="fa fa-facebook"></i>
+					</a>
+					<a id="wa" class="btn btn-default shareButton" href="whatsapp://send?text=https://KaushikDev.github.io/electronicCalculator" onClick="soundHitSocialIcon.play()">
+						<i class="fa fa-whatsapp"></i>
+					</a>
+					<a id="tw" class="btn btn-default shareButton" href="https://twitter.com/home?status=https://KaushikDev.github.io/electronicCalculator" target="_blank" onClick="soundHitSocialIcon.play()">
+						<i class="fa fa-twitter" ></i>
+					</a>
+					<a id="li" class="btn btn-default shareButton" href="
+		https://www.linkedin.com/shareArticle?url=https://KaushikDev.github.io/electronicCalculator&title=electronicCalculator" target="_blank" onClick="soundHitSocialIcon.play()">
+						<i class="fa fa-linkedin" ></i>
+					</a>
+					<a id="ma" class="btn btn-default shareButton" href="mailto:?subject=electronicCalculator.&amp;body=https://KaushikDev.github.io/electronicCalculator" target="_blank" onClick="soundHitSocialIcon.play()">
+						<i class="fa fa-envelope-o" ></i>
+					</a>
+				</div>
+
+	</div>
+
+
+
+	<div class="row text-center">
+
+
+		<div class="col-xs-4">
 		</div>
 
-</div>
+
+
+		<div class="col-xs-4 calcStyle">
+		<!--This column has actual calculator displayed-->
+		<input id="display" type="text" class="resultStyle" readonly >
+			<div style="margin-top:15px;">
+
+				<button class="buttonsStd" id="AC" onClick='allClear()'>AC</button>
+				<button class="buttonsStd" id="CE" onClick='pop()'>CE</button>
+				<button class="buttonsStd" id="%" onClick='key("%")'>%</button>
+				<button class="buttonsStd" id="/" onClick='key("/")'>/</button>
+				<button class="buttonsStd" id="sin" onClick='sin()'>sin</button>
+				<button class="buttonsStd" id="π" onClick='PI()'>π</button>
+				<button class="buttonsStd" id="7" onClick='key("7")'>7</button>
+				<button class="buttonsStd" id="8" onClick='key("8")'>8</button>
+				<button class="buttonsStd" id="9" onClick='key("9")'>9</button>
+				<button class="buttonsStd" id="*" onClick='key("*")'>*</button>
+				<button class="buttonsStd" id="cos" onClick='cos()'>cos</button>
+				<button class="buttonsStd" id="!" onClick='fact()'>!</button>
+				<button class="buttonsStd" id="4" onClick='key("4")'>4</button>
+				<button class="buttonsStd" id="5" onClick='key("5")'>5</button>
+				<button class="buttonsStd" id="6" onClick='key("6")'>6</button>
+				<button class="buttonsStd" id="-" onClick='key("-")'>-</button>
+				<button class="buttonsStd" id="tan" onClick='tan()'>tan</button>
+				<button class="buttonsStd" id="(" onClick='key("\(")'>(</button>
+				<button class="buttonsStd" id="1" onClick='key("1")'>1</button>
+				<button class="buttonsStd" id="2" onClick='key("2")'>2</button>
+				<button class="buttonsStd" id="3" onClick='key("3")'>3</button>
+				<button class="buttonsStd" id="+" onClick='key("+")'>+</button>
+				<button class="buttonsStd" id="lg10" onClick='log()'>lg10</button>
+				<button class="buttonsStd" id=")" onClick='key("\)")'>)</button>
+				<button class="buttonsStd" id="√" onClick='Sqrt()'>√</button>
+				<button class="buttonsStd" id="0" onClick='key("0")'>0</button>
+				<button class="buttonsStd" id="." onClick='key(".")'>.</button>
+				<button class="buttonsStd" id="=" onClick='ans()'>=</button>
+				<button class="buttonsStd" id="^" onClick='carat("^")'>^</button>
+				<button class="buttonsStd" id="x^y" onClick='POW()'>x^y</button>
+
+			</div>
+
+		</div>
+		
 
 
 
-<div class="row text-center">
+		<div class="col-xs-4">
+		</div>
 
 
-<div class="col-xs-4">
-</div>
-
-
-
-<div class="col-xs-4 calcStyle">
-<!--This column has actual calculator displayed-->
-<input id="display" type="text" class="resultStyle" readonly >
-<div style="margin-top:15px;">
-
-<button class="buttonsStd" id="AC" onClick='allClear()'>AC</button>
-<button class="buttonsStd" id="CE" onClick='pop()'>CE</button>
-<button class="buttonsStd" id="%" onClick='key("%")'>%</button>
-<button class="buttonsStd" id="/" onClick='key("/")'>/</button>
-<button class="buttonsStd" id="sin" onClick='sin()'>sin</button>
-<button class="buttonsStd" id="π" onClick='PI()'>π</button>
-<button class="buttonsStd" id="7" onClick='key("7")'>7</button>
-<button class="buttonsStd" id="8" onClick='key("8")'>8</button>
-<button class="buttonsStd" id="9" onClick='key("9")'>9</button>
-<button class="buttonsStd" id="*" onClick='key("*")'>*</button>
-<button class="buttonsStd" id="cos" onClick='cos()'>cos</button>
-<button class="buttonsStd" id="!" onClick='fact()'>!</button>
-<button class="buttonsStd" id="4" onClick='key("4")'>4</button>
-<button class="buttonsStd" id="5" onClick='key("5")'>5</button>
-<button class="buttonsStd" id="6" onClick='key("6")'>6</button>
-<button class="buttonsStd" id="-" onClick='key("-")'>-</button>
-<button class="buttonsStd" id="tan" onClick='tan()'>tan</button>
-<button class="buttonsStd" id="(" onClick='key("\(")'>(</button>
-<button class="buttonsStd" id="1" onClick='key("1")'>1</button>
-<button class="buttonsStd" id="2" onClick='key("2")'>2</button>
-<button class="buttonsStd" id="3" onClick='key("3")'>3</button>
-<button class="buttonsStd" id="+" onClick='key("+")'>+</button>
-<button class="buttonsStd" id="lg10" onClick='log()'>lg10</button>
-<button class="buttonsStd" id=")" onClick='key("\)")'>)</button>
-<button class="buttonsStd" id="√" onClick='Sqrt()'>√</button>
-<button class="buttonsStd" id="0" onClick='key("0")'>0</button>
-<button class="buttonsStd" id="." onClick='key(".")'>.</button>
-<button class="buttonsStd" id="=" onClick='ans()'>=</button>
-<button class="buttonsStd" id="^" onClick='carat("^")'>^</button>
-<button class="buttonsStd" id="x^y" onClick='POW()'>x^y</button>
-
-</div>
-
-</div>
-	
-
-
-
-<div class="col-xs-4">
-</div>
-
-
-</div>
+	</div>
 
 
 
