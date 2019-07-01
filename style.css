@@ -20,7 +20,7 @@ text-align: center;
     color:gray;
     font-size:10vw;
     width: 100%;
-    height: 30%;
+    height: 50%;
     border: 1px solid silver;
     display: inline-block;
 }
@@ -31,15 +31,15 @@ text-align: center;
     display: grid;
     grid-template-columns: auto auto auto auto auto auto;
     grid-template-rows: auto auto auto auto auto;
-    height: 70%;
+    height: 50%;
     margin: none;
-      
+         
 }
 
 .grid-item{
     font-size: 5vw;
     border: 1px solid silver;
-    color: gray;
+    
 
 }
 
@@ -47,10 +47,22 @@ text-align: center;
     background-color: orange;
 }
 
-#AC, #eq{
+#AC{
     color: red;
 }
 
+#one, #two, #three, #four, #five, #six, #seven, #eight, #nine, #zero{
+    background-color: black;
+    color: white;
+}
 
+#CE, #percent, #forwardSlash, #sin, #cos, #tan, #pie, #factorial, #startBracket, #endBracket, #power, #xPowerY, #lgBaseTen, #esterisk, #hyphen, #plus, #decimal, #root{
 
-    
+color:silver;
+
+} 
+
+ #eq{
+     background-color: red;
+     color: white;
+ }   

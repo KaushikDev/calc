@@ -131,8 +131,6 @@ function tan() {
 // <!-- This function evaluates the expression in the display area -->
 function log() {
   var tempVal = document.getElementById("display").value;
-  //document.getElementById("display").value=Math.log10(tempVal);
-  //+++++++Math.log10(tempVal) is not used because it is not supported on IE. Hence the following funcion is used.
   document.getElementById("display").value = Math.log(tempVal) / Math.LN10;
   endCalc();
 }
