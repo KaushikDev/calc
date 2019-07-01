@@ -1,5 +1,5 @@
 "use strict";
-var timer, i;
+var i;
 var flag = false;
 var inputs = document.getElementsByTagName("button");
 
@@ -11,20 +11,9 @@ function onLoad() {
 //  Separate function for key '^'
 function carat(val) {
   var tempVal = document.getElementById("display").value;
-  //clearInterval(timer);
-  if (tempVal === "ON") {
-    endCalc();
+  document.getElementById("display").value += val;
+  document.getElementById("xPowerY").style.backgroundColor = "red";
   }
-  else {
-    document.getElementById("display").value += val;
-    for (i = 0; i < inputs.length; i++) {
-      if (inputs[i].id === '=') {
-        document.getElementById(inputs[i].id).disabled = true;
-        document.getElementById(inputs[i].id).style.backgroundColor = "gray";
-      }
-    }
-  }
-}
 
 
 // Function key : This function puts the value of a numeric or arithmetic operator key pressed in to the display area
@@ -56,20 +45,23 @@ function key(val) {
 // <!-- Function allClear : This function clears everything in the display area-->
 function allClear() {
   document.getElementById("display").value = "ON";
-  for (i = 0; i < inputs.length; i++) {
-    document.getElementById(inputs[i].id).disabled = false;
-    document.getElementById(inputs[i].id).style.backgroundColor = "aqua";
-  }
+  document.getElementById("xPowerY").style.backgroundColor = "transparent";
 }
 
-// <!-- This function clears the entry one by one -->
+// <!-- This function clears the entry one by one, only if "ON" is not displayed -->
 function pop() {
-  var dispArr = (document.getElementById("display").value).split('');
-  dispArr.pop();
-  document.getElementById("display").value = dispArr.join('');
-  if (dispArr.length === 0) {
-    onLoad();
+  if (document.getElementById("display").value === "ON") {
+    //do nothing.
   }
+  else {
+    var dispArr = (document.getElementById("display").value).split('');
+    dispArr.pop();
+    document.getElementById("display").value = dispArr.join('');
+    if (dispArr.length === 0) {
+      onLoad();
+    }
+  }
+
 }
 
 // <!-- This function evaluates the expression in the display area -->
@@ -79,63 +71,47 @@ function ans() {
     document.getElementById("display").value = eval(tempVal);
 
   } catch (e) {
-    document.getElementById("display").value = "Wrong Expression !!";
+    document.getElementById("display").value = "Wrong Expression!";
 
   }
   finally {
-    endCalc();
+   console.log("Evaluated Expression : " + document.getElementById("display").value);
   }
 }
 
-// <!-- This function evaluates the expression in the display area -->
-function endCalc() {
-  for (i = 0; i < inputs.length; i++) {
-    if (inputs[i].id === 'AC') {
-      document.getElementById(inputs[i].id).disabled = false;
-    }
-    else {
-      document.getElementById(inputs[i].id).disabled = true;
-      document.getElementById(inputs[i].id).style.backgroundColor = "gray";
-    }
-  }
-}
 
-// <!-- This function evaluates the expression in the display area -->
+
+// <!-- This function evaluates square root -->
 function Sqrt() {
   var tempVal = document.getElementById("display").value;
   document.getElementById("display").value = Math.sqrt(tempVal);
-  endCalc();
 }
 
-// <!-- This function evaluates the expression in the display area -->
+// <!-- This function evaluates sine -->
 function sin() {
   var tempVal = document.getElementById("display").value;
   document.getElementById("display").value = Math.sin(tempVal);
-  endCalc();
 }
 
-// <!-- This function evaluates the expression in the display area -->
+// <!-- This function evaluates cosine -->
 function cos() {
   var tempVal = document.getElementById("display").value;
   document.getElementById("display").value = Math.cos(tempVal);
-  endCalc();
 }
 
-// <!-- This function evaluates the expression in the display area -->
+// <!-- This function evaluates tangent -->
 function tan() {
   var tempVal = document.getElementById("display").value;
   document.getElementById("display").value = Math.tan(tempVal);
-  endCalc();
 }
 
-// <!-- This function evaluates the expression in the display area -->
+// <!-- This function evaluates log to the base 10 -->
 function log() {
   var tempVal = document.getElementById("display").value;
   document.getElementById("display").value = Math.log(tempVal) / Math.LN10;
-  endCalc();
 }
 
-// <!-- This function evaluates the expression in the display area -->
+// <!-- This function evaluates factorial -->
 function fact() {
   var tempVal = Math.floor(document.getElementById("display").value);
   if (tempVal <= 1) {
@@ -147,15 +123,13 @@ function fact() {
     k *= (tempVal);
   }
   document.getElementById("display").value = k;
-  endCalc();
 }
 
-// <!-- This function evaluates the expression in the display area -->
+// <!-- This function evaluates pi -->
 function PI() {
   var tempVal = document.getElementById("display").value;
   document.getElementById("display").value = Math.PI;
-  endCalc();
-}
+  }
 
 // <!-- This function evaluates the expression in the display area -->
 function POW() {
@@ -185,5 +159,5 @@ function POW() {
   else {
     document.getElementById("display").value = "Enter like this : x^y";
   }
-  endCalc();
+
 }
