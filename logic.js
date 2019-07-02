@@ -6,13 +6,17 @@ var inputs = document.getElementsByTagName("button");
 // Function key : This function puts the value of a numeric or arithmetic operator key pressed in to the display area
 function onLoad() {
   document.getElementById("display").value = "ON";
+  document.getElementById("xPowerY").disabled = true;
 }
 
 //  Separate function for key '^'
 function carat(val) {
   var tempVal = document.getElementById("display").value;
   document.getElementById("display").value += val;
-  document.getElementById("xPowerY").style.backgroundColor = "red";
+  document.getElementById("xPowerY").disabled = false;
+  document.getElementById("xPowerY").style.backgroundColor = "#2693e0";
+  document.getElementById("eq").disabled = true;
+  document.getElementById("eq").style.backgroundColor = "gray";
   }
 
 
@@ -68,7 +72,7 @@ function pop() {
 function ans() {
   var tempVal = document.getElementById("display").value;
   try {
-    document.getElementById("display").value = eval(tempVal);
+    document.getElementById("display").value = eval(tempVal).toFixed(8);
 
   } catch (e) {
     document.getElementById("display").value = "Wrong Expression!";
@@ -128,7 +132,7 @@ function fact() {
 // <!-- This function evaluates pi -->
 function PI() {
   var tempVal = document.getElementById("display").value;
-  document.getElementById("display").value = Math.PI;
+  document.getElementById("display").value = Math.PI.toFixed(8);
   }
 
 // <!-- This function evaluates the expression in the display area -->
@@ -152,12 +156,23 @@ function POW() {
   }
   console.log("base is  : " + base);
   console.log("expo is  : " + expo);
-
+try{
   if (!isNaN(base) && !isNaN(expo)) {
     document.getElementById("display").value = Math.pow(base, expo);
   }
   else {
     document.getElementById("display").value = "Enter like this : x^y";
   }
+}
+catch(e){
+  document.getElementById("display").value = e;
+}
+finally{
+  document.getElementById("eq").disabled = false;
+  document.getElementById("xPowerY").disabled = true;
+  document.getElementById("eq").style.backgroundColor = "#2693e0";
+  document.getElementById("xPowerY").style.backgroundColor = "transparent";
+}
+  
 
 }
