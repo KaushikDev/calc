@@ -5,7 +5,7 @@ var inputs = document.getElementsByTagName("button");
 
 // Function key : This function puts the value of a numeric or arithmetic operator key pressed in to the display area
 function onLoad() {
-  document.getElementById("display").value = "ON";
+  document.getElementById("display").value = "0";
   document.getElementById("xPowerY").disabled = true;
 }
 
@@ -24,7 +24,7 @@ function carat(val) {
 function key(val) {
   var tempVal = document.getElementById("display").value;
 
-  if (tempVal === "ON") {
+  if (tempVal === "0") {
     document.getElementById("display").value = "";
   }
   switch (val) {
@@ -48,13 +48,13 @@ function key(val) {
 
 // <!-- Function allClear : This function clears everything in the display area-->
 function allClear() {
-  document.getElementById("display").value = "ON";
+  document.getElementById("display").value = "0";
   document.getElementById("xPowerY").style.backgroundColor = "transparent";
 }
 
-// <!-- This function clears the entry one by one, only if "ON" is not displayed -->
+// <!-- This function clears the entry one by one, only if "0" is not displayed -->
 function pop() {
-  if (document.getElementById("display").value === "ON") {
+  if (document.getElementById("display").value === "0") {
     //do nothing.
   }
   else {
