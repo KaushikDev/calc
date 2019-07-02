@@ -72,7 +72,7 @@ function pop() {
 function ans() {
   var tempVal = document.getElementById("display").value;
   try {
-    document.getElementById("display").value = eval(tempVal).toFixed(8);
+    document.getElementById("display").value = eval(tempVal);
 
   } catch (e) {
     document.getElementById("display").value = "Wrong Expression!";
