@@ -55,13 +55,13 @@ text-align: center;
 }
 
 #one, #two, #three, #four, #five, #six, #seven, #eight, #nine, #zero{
-    background-color: #fafafa;
-    color: silver;
+    background-color: #c4ecfc;
+    color: gray;
 }
 
 #CE, #percent, #forwardSlash, #sin, #cos, #tan, #pie, #factorial, #startBracket, #endBracket, #power, #xPowerY, #lgBaseTen, #esterisk, #hyphen, #plus, #decimal, #root{
 
-color:silver;
+color:gray;
 
 } 
 
