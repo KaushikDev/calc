@@ -72,7 +72,13 @@ function pop() {
 function ans() {
   var tempVal = document.getElementById("display").value;
   try {
-    document.getElementById("display").value = eval(tempVal);
+    if (!Number.isInteger(eval(tempVal))) {
+      document.getElementById("display").value = eval(tempVal).toFixed(4);
+    }
+    else{
+      document.getElementById("display").value = eval(tempVal);
+    }
+    
 
   } catch (e) {
     document.getElementById("display").value = "Wrong Expression!";
@@ -88,31 +94,31 @@ function ans() {
 // <!-- This function evaluates square root -->
 function Sqrt() {
   var tempVal = document.getElementById("display").value;
-  document.getElementById("display").value = Math.sqrt(tempVal);
+  document.getElementById("display").value = Math.sqrt(tempVal).toFixed(4);
 }
 
 // <!-- This function evaluates sine -->
 function sin() {
   var tempVal = document.getElementById("display").value;
-  document.getElementById("display").value = Math.sin(tempVal);
+  document.getElementById("display").value = Math.sin(tempVal).toFixed(4);
 }
 
 // <!-- This function evaluates cosine -->
 function cos() {
   var tempVal = document.getElementById("display").value;
-  document.getElementById("display").value = Math.cos(tempVal);
+  document.getElementById("display").value = Math.cos(tempVal).toFixed(4);
 }
 
 // <!-- This function evaluates tangent -->
 function tan() {
   var tempVal = document.getElementById("display").value;
-  document.getElementById("display").value = Math.tan(tempVal);
+  document.getElementById("display").value = Math.tan(tempVal).toFixed(4);
 }
 
 // <!-- This function evaluates log to the base 10 -->
 function log() {
   var tempVal = document.getElementById("display").value;
-  document.getElementById("display").value = Math.log(tempVal) / Math.LN10;
+  document.getElementById("display").value = (Math.log(tempVal) / Math.LN10).toFixed(4);
 }
 
 // <!-- This function evaluates factorial -->
@@ -132,7 +138,7 @@ function fact() {
 // <!-- This function evaluates pi -->
 function PI() {
   var tempVal = document.getElementById("display").value;
-  document.getElementById("display").value = Math.PI.toFixed(8);
+  document.getElementById("display").value = Math.PI.toFixed(4);
   }
 
 // <!-- This function evaluates the expression in the display area -->
