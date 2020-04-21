@@ -1,66 +1,67 @@
 "use strict";
-var i;
-var flag = false;
-var inputs = document.getElementsByTagName("button");
+let display = document.querySelector("#display");
+let xPowerY =  document.querySelector("#xPowerY");
+let eq = document.querySelector("#eq");
+let tempVal;
 
 // Function key : This function puts the value of a numeric or arithmetic operator key pressed in to the display area
 function onLoad() {
-  document.getElementById("display").value = "0";
-  document.getElementById("xPowerY").disabled = true;
+  display.value = "0";
+  xPowerY.disabled = true;
 }
 
 //  Separate function for key '^'
 function carat(val) {
-  var tempVal = document.getElementById("display").value;
-  document.getElementById("display").value += val;
-  document.getElementById("xPowerY").disabled = false;
-  document.getElementById("xPowerY").style.backgroundColor = "#2693e0";
-  document.getElementById("eq").disabled = true;
-  document.getElementById("eq").style.backgroundColor = "gray";
+  tempVal = display.value;
+  display.value += val;
+  xPowerY.disabled = false;
+  xPowerY.style.backgroundColor = "#2693e0";
+  eq.disabled = true;
+  eq.style.backgroundColor = "gray";
   }
 
 
 // Function key : This function puts the value of a numeric or arithmetic operator key pressed in to the display area
 function key(val) {
-  var tempVal = document.getElementById("display").value;
+  tempVal = display.value;
 
   if (tempVal === "0") {
-    document.getElementById("display").value = "";
+    display.value = "";
   }
   switch (val) {
     case '1': case '2': case '3': case '4': case '5': case '6': case '7': case '8': case '9': case '0':
-      document.getElementById("display").value += val;
+      display.value += val;
       break;
     case '+': case '-': case '*': case '/': case '%': case '.': case '(': case ')':
-      var tempVal;
-      tempVal = document.getElementById("display").value;
+      tempVal;
+      tempVal = display.value;
       if (tempVal = "") {
-        document.getElementById("display").value = "";
+        display.value = "";
       }
       else if (tempVal != '+' && tempVal != '-' && tempVal != '*' && tempVal != '/' && tempVal != '%' && tempVal != '.') {
-        document.getElementById("display").value += val;
+        display.value += val;
       }
       else {
-        document.getElementById("display").value = tempVal;
+        display.value = tempVal;
       }
   }
 }
 
 // <!-- Function allClear : This function clears everything in the display area-->
 function allClear() {
-  document.getElementById("display").value = "0";
-  document.getElementById("xPowerY").style.backgroundColor = "transparent";
+  display.value = "0";
+  xPowerY.style.backgroundColor = "transparent";
 }
 
 // <!-- This function clears the entry one by one, only if "0" is not displayed -->
 function pop() {
-  if (document.getElementById("display").value === "0") {
+  if (display.value === "0") {
     //do nothing.
   }
   else {
-    var dispArr = (document.getElementById("display").value).split('');
+    let dispArr = (display.value).split('');
     dispArr.pop();
-    document.getElementById("display").value = dispArr.join('');
+    display.value = dispArr.join('');
     if (dispArr.length === 0) {
       onLoad();
     }
@@ -70,22 +71,22 @@ function pop() {
 
 // <!-- This function evaluates the expression in the display area -->
 function ans() {
-  var tempVal = document.getElementById("display").value;
+  tempVal = display.value;
   try {
     if (!Number.isInteger(eval(tempVal))) {
-      document.getElementById("display").value = eval(tempVal).toFixed(4);
+      display.value = eval(tempVal).toFixed(4);
     }
     else{
-      document.getElementById("display").value = eval(tempVal);
+      display.value = eval(tempVal);
     }
     
 
   } catch (e) {
-    document.getElementById("display").value = "Wrong Expression!";
+    display.value = "Wrong Expression!";
 
   }
   finally {
-   console.log("Evaluated Expression : " + document.getElementById("display").value);
+   console.log("Evaluated Expression : " + display.value);
   }
 }
 
@@ -93,67 +94,67 @@ function ans() {
 
 // <!-- This function evaluates square root -->
 function Sqrt() {
-  var tempVal = document.getElementById("display").value;
-  document.getElementById("display").value = Math.sqrt(tempVal).toFixed(4);
+  tempVal = display.value;
+  display.value = Math.sqrt(tempVal).toFixed(4);
 }
 
 // <!-- This function evaluates sine -->
 function sin() {
-  var tempVal = document.getElementById("display").value;
-  document.getElementById("display").value = Math.sin(tempVal).toFixed(4);
+  tempVal = display.value;
+  display.value = Math.sin(tempVal).toFixed(4);
 }
 
 // <!-- This function evaluates cosine -->
 function cos() {
-  var tempVal = document.getElementById("display").value;
-  document.getElementById("display").value = Math.cos(tempVal).toFixed(4);
+  tempVal = display.value;
+  display.value = Math.cos(tempVal).toFixed(4);
 }
 
 // <!-- This function evaluates tangent -->
 function tan() {
-  var tempVal = document.getElementById("display").value;
-  document.getElementById("display").value = Math.tan(tempVal).toFixed(4);
+  tempVal = display.value;
+  display.value = Math.tan(tempVal).toFixed(4);
 }
 
 // <!-- This function evaluates log to the base 10 -->
 function log() {
-  var tempVal = document.getElementById("display").value;
-  document.getElementById("display").value = (Math.log(tempVal) / Math.LN10).toFixed(4);
+  tempVal = display.value;
+  display.value = (Math.log(tempVal) / Math.LN10).toFixed(4);
 }
 
 // <!-- This function evaluates factorial -->
 function fact() {
-  var tempVal = Math.floor(document.getElementById("display").value);
+  tempVal = Math.floor(display.value);
   if (tempVal <= 1) {
-    alert("Choose a number larger than 2");
+    alert("Choose a number greater than 2");
   }
-  var k = tempVal;
+  let k = tempVal;
   while (tempVal != 1) {
     tempVal -= 1;
     k *= (tempVal);
   }
-  document.getElementById("display").value = k;
+  display.value = k;
 }
 
 // <!-- This function evaluates pi -->
 function PI() {
-  var tempVal = document.getElementById("display").value;
-  document.getElementById("display").value = Math.PI.toFixed(4);
+  tempVal = display.value;
+  display.value = Math.PI.toFixed(4);
   }
 
 // <!-- This function evaluates the expression in the display area -->
 function POW() {
-  var tempArr = document.getElementById("display").value.split('');
+  let tempArr = display.value.split('');
   console.log(tempArr);
   //New code for more than single digits in calculation
-  var loc;
+  let loc;
   for (i = 0; i < tempArr.length; i++) {
     if (tempArr[i] === '^') {
       loc = i;
     }
   }
-  var base = '';
-  var expo = '';
+  let base = '';
+  let expo = '';
   for (i = 0; i < loc; i++) {
     base += tempArr[i];
   }
@@ -164,20 +165,20 @@ function POW() {
   console.log("expo is  : " + expo);
 try{
   if (!isNaN(base) && !isNaN(expo)) {
-    document.getElementById("display").value = Math.pow(base, expo);
+    display.value = Math.pow(base, expo);
   }
   else {
-    document.getElementById("display").value = "Enter like this : x^y";
+    display.value = "Enter like this : x^y";
   }
 }
 catch(e){
-  document.getElementById("display").value = e;
+  display.value = e;
 }
 finally{
-  document.getElementById("eq").disabled = false;
-  document.getElementById("xPowerY").disabled = true;
-  document.getElementById("eq").style.backgroundColor = "#2693e0";
-  document.getElementById("xPowerY").style.backgroundColor = "transparent";
+  eq.disabled = false;
+  xPowerY.disabled = true;
+  eq.style.backgroundColor = "#2693e0";
+  xPowerY.style.backgroundColor = "transparent";
 }
   
 
