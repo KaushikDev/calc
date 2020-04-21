@@ -218,6 +218,28 @@
 }
 
 @media screen and (min-width: 300px) and (max-width: 728px) {
+  
+  #display {
+  width: 100%;
+  height: 50%;
+  background-color: #0095dd;
+  color: #fff;
+  border: none;
+  font-size: 2.5rem;
+  padding: 1rem;
+}
+
+.grid-container {
+  width: 100%;
+  height: 50%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 0 1fr 0 1fr 0 1fr 0 1fr 0 1fr;
+  grid-template-columns: repeat(6, 1fr);
+  -ms-grid-rows: 1fr 0 1fr 0 1fr 0 1fr 0 1fr;
+  grid-template-rows: repeat(5, 1fr);
+  gap: 0;
+}
   .grid-item {
     font-size: 1rem;
     border: 1px solid #fafafa;
