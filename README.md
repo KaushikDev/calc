@@ -1,2 +1,1 @@
-# electronicCalculator
-This app shows electronic calculator.
+Simple electronic calculator.
