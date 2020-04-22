@@ -2,57 +2,60 @@
 
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" charset="UTF-8">
-	<title>eCalculator</title>
+	<title>Calculator</title>
 	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="vendor-prefixes.css">
 	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 </head>
 
 
-<body onload="onLoad()">
+<body>
 
-		<div class="mainArea">
-	
-			<input id="display" type="text" readonly>
-			<div class="grid-container">
-				<button class="grid-item otherKeys" id="AC" onClick='allClear()'>AC</button>
-				<button class="grid-item otherKeys" id="CE" onClick='pop()'>CE</button>
-				<button class="grid-item otherKeys" id="sin" onClick='sin()'>sin</button>
-				<button class="grid-item otherKeys" id="cos" onClick='cos()'>cos</button>
-				<button class="grid-item otherKeys" id="tan" onClick='tan()'>tan</button>
-				<button class="grid-item otherKeys" id="lgBaseTen" onClick='log()'>lg10</button>
+		<div class="calculator">
+			<div class="calculator__output">
+				<div data-previous-operand class="previous-operand"></div>
+				<div data-current-operand class="current-operand"></div>
+			</div>
+			<div class="calculator__buttons">
+				<button data-all-clear id="ac">AC</button>
+				<button data-delete id="ce">CE</button>
+				<button data-scientific>sin</button>
+				<button data-scientific>cos</button>
+				<button data-scientific>tan</button>
+				<button data-scientific>Log(10)</button>
 				
-				<button class="grid-item otherKeys" id="percent" onClick='key("%")'>%</button>
-				<button class="grid-item numberKeys" id="seven" onClick='key("7")'>7</button>
-				<button class="grid-item numberKeys" id="eight" onClick='key("8")'>8</button>
-				<button class="grid-item numberKeys" id="nine" onClick='key("9")'>9</button>
-				<button class="grid-item otherKeys" id="forwardSlash" onClick='key("/")'> / </button>
-				<button class="grid-item otherKeys" id="pie" onClick='PI()'>π</button>
+				<button data-operation>%</button>
+				<button data-number>7</button>
+				<button data-number>8</button>
+				<button data-number>9</button>
+				<button data-operation>÷</button>
+				<button data-scientific>Log(2)</button>
 				
-				<button class="grid-item otherKeys" id="factorial" onClick='fact()'>!</button>
-				<button class="grid-item numberKeys" id="four" onClick='key("4")'>4</button>
-				<button class="grid-item numberKeys" id="five" onClick='key("5")'>5</button>
-				<button class="grid-item numberKeys" id="six" onClick='key("6")'>6</button>
-				<button class="grid-item otherKeys" id="esterisk" onClick='key("*")'>x</button>
-				<button class="grid-item otherKeys" id="power" onClick='carat("^")'>^</button>
+				<button data-scientific>Fact(!)</button>
+				<button data-number>4</button>
+				<button data-number>5</button>
+				<button data-number>6</button>
+				<button data-operation>*</button>
+				<button data-scientific>√</button>
 				
-				<button class="grid-item otherKeys" id="startBracket" onClick='key("\(")'>(</button>
-				<button class="grid-item numberKeys" id="one" onClick='key("1")'>1</button>
-				<button class="grid-item numberKeys" id="two" onClick='key("2")'>2</button>
-				<button class="grid-item numberKeys" id="three" onClick='key("3")'>3</button>
-				<button class="grid-item otherKeys" id="hyphen" onClick='key("-")'>-</button>
-				<button class="grid-item otherKeys" id="endBracket" onClick='key("\)")'>)</button>
+				<button data-operation>^</button>
+				<button data-number>1</button>
+				<button data-number>2</button>
+				<button data-number>3</button>
+				<button data-operation>-</button>
+				<button data-scientific>∛</button>
 				
-				<button class="grid-item otherKeys" id="root" onClick='Sqrt()'>√</button>
-				<button class="grid-item otherKeys" id="xPowerY" onClick='POW()'>x^y</button>
-				<button class="grid-item numberKeys" id="zero" onClick='key("0")'>0</button>
-				<button class="grid-item otherKeys" id="decimal" onClick='key(".")'>.</button>
-				<button class="grid-item otherKeys" id="plus" onClick='key("+")'>+</button>
-				<button class="grid-item otherKeys" id="eq" onClick='ans()'>=</button>
+				<button data-operation>mod</button>
+				<button data-number>00</button>
+				<button data-number>0</button>
+				<button data-number>.</button>
+				<button data-operation>+</button>
+				<button data-equals id="eq">=</button>
 			</div>
 		</div>
 
 
-	<script src="logic.js">
+	<script src="logic.js" defer>
 	</script>
 
 
